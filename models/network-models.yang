@@ -1,0 +1,16 @@
+module network-models {
+    yang-version "1";
+    namespace "networkautomation:yang:network-functions";
+    prefix "network-functions";
+
+    import load-balancer { prefix "load-balancer"; }
+    import openconfig-vlan { prefix "oc-vlan"; }
+    import openconfig-interfaces { prefix "oc-if"; }
+
+    uses load-balancer:extended-load-balancer;
+
+    container vlan-config {
+        uses oc-vlan:vlan-config;
+    }
+    uses oc-if:interfaces-top;
+}

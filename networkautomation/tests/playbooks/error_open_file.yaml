@@ -1,0 +1,10 @@
+---
+- name: Read file
+  gather_facts: false
+  hosts: all
+  connection: local
+  tasks:
+    - name: Read file "{{ load_balancer.name }}"
+      debug: var=item
+      with_file:
+        - "{{ load_balancer.name }}"
